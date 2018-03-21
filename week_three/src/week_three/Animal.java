@@ -1,5 +1,7 @@
 package week_three;
 
+// Task 1.
+
 public abstract class Animal {
 	private static int countAnimals;
     private String name;

@@ -5,15 +5,12 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-//  2.  Создать массив животных, и добавить туда множество котов и собак.
-//	    Итеративно пройтись по массиву,
-//	    и распечатать на консоль вид животного, его возраст и имя.
-
+//  Task 2.
 	        ArrayList<Animal> list = new ArrayList<>();
 	        list.add(new Cat("Bella", 0));
 	        list.add(new Cat("CoCo", 6));
 	        list.add(new Cat("Oscar", 10));
-	        list.add(new Dog("Лиза", 2));
+	        list.add(new Dog("Liza", 2));
 	        list.add(new Dog("Jaccck", 4));
 	        list.add(new Dog("Spike", 7));
 
@@ -67,9 +64,7 @@ public class Main {
 	        }
 	    }
 
-//  3.  Создать метод, который из созданного в п.2 массива удалит всех котов младше 1 года или старше 8 лет,
-//	    а также всех собак, чьё имя содержит больше 4 согласных букв.
-
+//  Task 3.
 	    private static void deleteAnimals(ArrayList<Animal> list) {
 	        for (int i = 0; i < list.size(); i++) {
 	            if (list.get(i) instanceof Cat) {
@@ -89,8 +84,7 @@ public class Main {
 	    private static int checkConsonantLetter(String dogName) {
 	        int countConsonantLetter = 0;
 	        char[] chars = dogName.toLowerCase().toCharArray();
-	        char[] consonant = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с',
-	                'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
+	        char[] consonant = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
 	                'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z', 'w'};
 
 	        for (char c : chars) {
@@ -104,13 +98,7 @@ public class Main {
 	        return countConsonantLetter;
 	    }
 
-//  5.	  *Создать метод, принимающий на вход массив, и возвращающий массив содержащий в качестве
-//	      индексов значения входного массива, а в качестве значений - кол-во вхождений данного элемента во входном массиве.
-//	      Значения входного массива не могут быть меньше 0 или больше 100.
-//	      Пример:
-//	      Вход: [5,3,7,3,1,9,2,9,0,4,9]
-//	      Выход: [1,1,1,2,1,1,0,1,0,3]
-
+//  Task 5.
 	    private static int[] changeArray(int[] array) {
 	        int tmp = 0;
 	        int size = 0;

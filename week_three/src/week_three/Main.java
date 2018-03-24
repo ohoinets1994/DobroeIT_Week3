@@ -47,7 +47,7 @@ public class Main {
 	        nursery.addToNursery(new Dog("Ivan", 3));
 	        nursery.addToNursery(new Dog("Ivan", 9));
 
-	        ArrayList<Animal> expectedPets = nursery.getPet("dog", 3,8);
+	        ArrayList<Animal> expectedPets = nursery.getPet("Dog", 3,8);
 
 	        if (expectedPets.size() == 0)
 	            System.out.println("sorry");
@@ -100,7 +100,6 @@ public class Main {
 
 //  Task 5.
 	    private static int[] changeArray(int[] array) {
-	        int tmp = 0;
 	        int size = 0;
 	        int[] newArray;
 
@@ -116,12 +115,7 @@ public class Main {
 	        newArray = new int[size + 1];
 
 	        for (int i : array) {
-	            tmp = 0;
-	            for (int j : array) {
-	                if (j == i)
-	                    tmp++;
-	            }
-	            newArray[i] = tmp;
+	            newArray[i]++;
 	        }
 	        return newArray;
 	    }

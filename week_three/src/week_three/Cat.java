@@ -10,4 +10,9 @@ public class Cat extends Animal {
     public void voice() {
         System.out.println("Miau");
     }
+    
+    @Override
+	public void dyingVoice() {
+		System.out.println("Last Meow before death");
+	}
 }

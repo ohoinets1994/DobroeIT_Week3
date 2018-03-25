@@ -10,4 +10,9 @@ public class Dog extends Animal{
     public void voice() {
         System.out.println("Woof");
     }
+    
+    @Override
+	public void dyingVoice() {
+		System.out.println("Last Woof before death");
+	}
 }

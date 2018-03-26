@@ -3,7 +3,7 @@ package week_three;
 import java.util.ArrayList;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		
 		ArrayList<Animal> list = new ArrayList<>();
@@ -17,13 +17,15 @@ public class Main {
 		list.add(new Dog("Spike", 7));
 		list.add(new Dog("Spike", 7));
 
+		int count = 0;
 		for (Animal animal : list) {
 			try {
 				animal.voice();				
-			} catch (UnsupportedOperationException e) {}
+			} catch (UnsupportedOperationException e) {
+				count++;
+			}
 		}
-		
-		System.out.println(Fish.getCount());
+		System.out.println(count);
 		System.out.println(Animal.getCountAnimals());
 		System.out.println(getClassName(list.get(0)));
 		
@@ -31,7 +33,7 @@ public class Main {
 			new Cat("Bars", 1);
 			new Dog("Spike", 2);
 		}
-//		System.gc();
+		System.gc();
 	}
 	
 //  Task 4. (Module 3.1)

@@ -13,6 +13,6 @@ public class Cat extends Animal {
     
     @Override
 	public void dyingVoice() {
-		System.out.println("Last Meow before death");
+		System.out.println("Last Meow before death ");
 	}
 }

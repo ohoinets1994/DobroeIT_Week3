@@ -27,11 +27,11 @@ public class Main {
 		System.out.println(Animal.getCountAnimals());
 		System.out.println(getClassName(list.get(0)));
 		
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 300000; i++) {
 			new Cat("Bars", 1);
 			new Dog("Spike", 2);
 		}
-		System.gc();
+//		System.gc();
 	}
 	
 //  Task 4. (Module 3.1)
@@ -60,8 +60,8 @@ public class Main {
 	private static int checkConsonantLetter(String dogName) {
 		int countConsonantLetter = 0;
 		char[] chars = dogName.toLowerCase().toCharArray();
-		char[] consonant = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x',
-				'z', 'w' };
+		char[] consonant = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+				'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z', 'w' };
 
 		for (char c : chars) {
 			for (char v : consonant) {
@@ -81,8 +81,8 @@ public class Main {
 
 		for (int i : array) {
 			if (i < 0 || i > 100) {
-				System.out.println(
-						"Input array values cannot be less than 0" + " or greater than 100. Check your array again: ");
+				System.out.println("Input array values cannot be less than 0" +
+				" or greater than 100. Check your array again: ");
 				return array;
 			}
 			if (i > size)

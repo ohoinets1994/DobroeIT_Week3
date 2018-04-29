@@ -1,8 +1,10 @@
 package week_three;
 
+import java.io.Serializable;
+
 // Task 1.
 
-public abstract class Animal {
+public abstract class Animal implements Serializable{
 	private static int countAnimals;
     private String name;
     private int age;

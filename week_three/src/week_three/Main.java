@@ -7,15 +7,15 @@ public class Main {
 	public static void main(String[] args) {
 		
 		ArrayList<Animal> list = new ArrayList<>();
-		list.add(new Cat("Bella", 0));
-		list.add(new Cat("CoCo", 6));
-		list.add(new Cat("Oscar", 10));
-		list.add(new Dog("Liza", 2));
-		list.add(new Fish("Jaccck", 4));
-		list.add(new Fish("Spike", 7));
-		list.add(new Fish("Spike", 7));
-		list.add(new Dog("Spike", 7));
-		list.add(new Dog("Spike", 7));
+		list.add(new Cat(1, "Bella", 0));
+		list.add(new Cat(1, "CoCo", 6));
+		list.add(new Cat(1, "Oscar", 10));
+		list.add(new Dog(1, "Liza", 2));
+		list.add(new Fish(1, "Jaccck", 4));
+		list.add(new Fish(1, "Spike", 7));
+		list.add(new Fish(1, "Spike", 7));
+		list.add(new Dog(1, "Spike", 7));
+		list.add(new Dog(1, "Spike", 7));
 
 		int count = 0;
 		for (Animal animal : list) {
@@ -29,11 +29,11 @@ public class Main {
 		System.out.println(Animal.getCountAnimals());
 		System.out.println(getClassName(list.get(0)));
 		
-		for (int i = 0; i < 300000; i++) {
-			new Cat("Bars", 1);
-			new Dog("Spike", 2);
-		}
-		System.gc();
+//		for (int i = 0; i < 300000; i++) {
+//			new Cat(1, "Bars", 1);
+//			new Dog(1, "Spike", 2);
+//		}
+//		System.gc();
 	}
 	
 //  Task 4. (Module 3.1)

@@ -2,9 +2,10 @@ package week_three;
 
 public class Cat extends Animal {
 	
-	Cat(String name, int age) {
-        super(name, age);
+	Cat(long id, String name, int age) {
+        super(id, name, age);
     }
+
 
     @Override
     public void voice() {

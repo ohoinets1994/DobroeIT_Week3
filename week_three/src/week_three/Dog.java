@@ -2,8 +2,8 @@ package week_three;
 
 public class Dog extends Animal{
 
-	Dog(String name, int age) {
-        super(name, age);
+	Dog(long id, String name, int age) {
+        super(id, name, age);
     }
 
     @Override

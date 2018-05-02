@@ -8,11 +8,13 @@ public abstract class Animal implements Serializable{
 	private static int countAnimals;
     private String name;
     private int age;
+    private long id;
 
-    Animal(String name, int age) {
+    Animal(long id, String name, int age) {
         countAnimals++;
         this.name = name;
         this.age = age;
+        this.id = id;
     }
 
     public abstract void voice();
@@ -27,6 +29,10 @@ public abstract class Animal implements Serializable{
 
     int getAge(){
         return this.age;
+    }
+    
+    public long getId() {
+        return id;
     }
 
     static int getCountAnimals() {

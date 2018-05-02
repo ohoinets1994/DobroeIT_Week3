@@ -9,9 +9,9 @@ public class AnimalDao {
     private static final String DATABASE_URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USER = "postgres";
     private static final String PASSWORD = "123";
-    private static final String ANIMAL_TABLE = "CREATE TABLE a(id integer PRIMARY KEY, " +
+    private static final String ANIMAL_TABLE = "CREATE TABLE animal(id integer PRIMARY KEY, " +
             "name VARCHAR(20), age integer, animal_type_id integer)";
-    private static final String ANIMAL_TYPE_ID = "CREATE TABLE s(id integer PRIMARY KEY, type VARCHAR(20))";
+    private static final String ANIMAL_TYPE_ID = "CREATE TABLE animal_type_id(id integer PRIMARY KEY, type VARCHAR(20))";
 
     private static final int CAT = 1;
     private static final int DOG = 2;

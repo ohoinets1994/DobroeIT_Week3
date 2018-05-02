@@ -9,6 +9,9 @@ public class AnimalDao {
     private static final String DATABASE_URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USER = "postgres";
     private static final String PASSWORD = "123";
+    private static final String ANIMAL_TABLE = "CREATE TABLE a(id integer PRIMARY KEY, " +
+            "name VARCHAR(20), age integer, animal_type_id integer)";
+    private static final String ANIMAL_TYPE_ID = "CREATE TABLE s(id integer PRIMARY KEY, type VARCHAR(20))";
 
     private static final int CAT = 1;
     private static final int DOG = 2;
@@ -19,8 +22,27 @@ public class AnimalDao {
         return DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
     }
 
-    public boolean add(Animal animal) {
+    public void createTable(String tableName) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
 
+        try {
+            connection = connection();
+
+            if (tableName.equals("animal"))
+                preparedStatement = connection.prepareStatement(ANIMAL_TABLE);
+            else
+                preparedStatement = connection.prepareStatement(ANIMAL_TYPE_ID);
+
+            preparedStatement.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeAllTwo(connection, preparedStatement);
+        }
+    }
+
+    public boolean add(Animal animal) {
         Connection connection = null;
         PreparedStatement add = null;
 
@@ -43,14 +65,7 @@ public class AnimalDao {
         } catch (Exception e) {
             return false;
         } finally {
-            try {
-                if (add != null) {
-                    add.close();
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            closeAllTwo(connection, add);
         }
 
         return true;
@@ -124,6 +139,7 @@ public class AnimalDao {
     public boolean update(Animal animal) {
         Connection connection = null;
         PreparedStatement upd = null;
+
         List<Animal> list = findAll();
         List<Long> list1 = new ArrayList<>();
         for (Animal a : list) {
@@ -143,14 +159,7 @@ public class AnimalDao {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (upd != null) {
-                try {
-                    upd.close();
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            closeAllTwo(connection, upd);
         }
         return true;
     }
@@ -228,6 +237,17 @@ public class AnimalDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void closeAllTwo(Connection connection, PreparedStatement preparedStatement) {
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
